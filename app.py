@@ -36,7 +36,7 @@ def processRequest(req):
 		result = req.get("result")
 		parameters = result.get("parameters")
 		zone = parameters.get("pizza")
-		speech = "la pizza " +zone + " costa 5 euro"
+		speech = "la pizza " +zone + " costa 15 euro"
 		res = makeWebhookResult(speech)
 		return res
 	
