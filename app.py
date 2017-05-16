@@ -33,7 +33,9 @@ def webhook():
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
-		speech = "la pizza costa 5 euro"
+		parameters = result.get("parameters")
+		zone = parameters.get("pizza")
+		speech = "la pizza " +zone + " costa 5 euro"
 		res = makeWebhookResult(speech)
 		return res
 	
