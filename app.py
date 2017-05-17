@@ -48,7 +48,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "ok 19.34,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+data.cars['Nissan'][0].model #+data.get("price") 
+		speech = "ok 19.34,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "#+data.cars['Nissan'][0].model #+data.get("price") 
 		res = makeWebhookResult(speech)
 		return res
 	
