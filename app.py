@@ -42,8 +42,8 @@ def webhook():
     
     # with open('pizzaimport.json') as data_file:    
     # data = json.load(data_file)
-    with open('http://search.twitter.com/search.json?q=python&rpp=5', 'r') as f:
-    data = json.load(f)
+    #with open('http://search.twitter.com/search.json?q=python&rpp=5', 'r') as f:
+    #data = json.load(f)
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
