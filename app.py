@@ -29,7 +29,11 @@ def webhook():
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
-
+    
+	
+    with open('pizzaimport.json') as data_file:    
+    data = json.load(data_file)
+    
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
@@ -41,7 +45,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro"
+		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro"+ data["pizza"]["name"]
 		res = makeWebhookResult(speech)
 		return res
 	
