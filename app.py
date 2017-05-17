@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from urllib.request import urlopen
+#from urllib.request import urlopen
 
 from __future__ import print_function
 from future import standard_library
