@@ -45,7 +45,7 @@ def webhook():
     # data = json.load(data_file)
     #with open('http://search.twitter.com/search.json?q=python&rpp=5', 'r') as f:
     #data = json.load(f)
-   # data = urllib2.urlopen(https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json) # it's a file like object and works just like a file
+    data = urllib2.urlopen(https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json) # it's a file like object and works just like a file
    # for line in data: # files are iterable
    # print line
 
