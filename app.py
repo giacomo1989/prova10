@@ -35,7 +35,7 @@ def webhook():
 
 
 
-    #response = urllib.urlopen('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json')
+    #response = urllib.urlopen('https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json')
     #data = json.load(response) 
     
     # with open('pizzaimport.json') as data_file:    
