@@ -31,8 +31,8 @@ def webhook():
     return r
     
 	
-    with open('pizzaimport.json') as data_file:    
-    data = json.load(data_file)
+    # with open('pizzaimport.json') as data_file:    
+    # data = json.load(data_file)
     
 
 def processRequest(req):
