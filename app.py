@@ -32,8 +32,8 @@ def webhook():
     
 
 	
-    response = urllib.urlopen('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json')
-    data = json.load(response) 
+   # response = urllib.urlopen('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json')
+   # data = json.load(response) 
     
     # with open('pizzaimport.json') as data_file:    
     # data = json.load(data_file)
@@ -49,7 +49,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro"+ data["pizza"]["name"]
+		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro"#+ data["pizza"]["name"]
 		res = makeWebhookResult(speech)
 		return res
 	
