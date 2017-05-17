@@ -37,8 +37,6 @@ url = "https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaim
 response = urllib.request.urlopen(url)
 content = response.read()
 data = json.loads(content.decode("utf8"))
-#ok = data.get('price')
-#print data
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
