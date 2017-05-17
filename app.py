@@ -32,31 +32,15 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
     
-#open('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json').read()
-#config = json.loads(open('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json').read())
 
-    
-    #u = urlopen('http://search.twitter.com/search.json?q=python&rpp=5')
-    #resp = json.loads(u.read().decode('utf-8'))
-    #response = urllib.urlopen('https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json')
-    #data = json.load(response) 
-    
-    # with open('pizzaimport.json') as data_file:    
-    # data = json.load(data_file)
-    #with open('http://search.twitter.com/search.json?q=python&rpp=5', 'r') as f:
-    #data = json.load(f)
-    #data = urllib2.urlopen(https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json) # it's a file like object and works just like a file
-   # for line in data: # files are iterable
-   # print line
 url = "https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json"
 response = urllib.urlopen(url)
 data = json.loads(response.read())
-print data
+#print data
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
 		result = req.get("result")
-		#pro = data.get("price")
 		parameters = result.get("parameters")
 		zone = parameters.get("pizza")
 		cost = {'margherita':3.50, 
