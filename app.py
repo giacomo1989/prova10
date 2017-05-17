@@ -45,7 +45,7 @@ def webhook():
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
 		result = req.get("result")
-		pro = data.get("price")
+		#pro = data.get("price")
 		parameters = result.get("parameters")
 		zone = parameters.get("pizza")
 		cost = {'margherita':3.50, 
