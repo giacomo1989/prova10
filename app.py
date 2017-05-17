@@ -32,7 +32,7 @@ def webhook():
     
 
 	
-    response = urllib.urlopen('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json'),read()
+    response = urllib.urlopen('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json').read()
     data = json.load(response) 
     
     # with open('pizzaimport.json') as data_file:    
