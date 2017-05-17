@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from urllib.request import urlopen
 
 from __future__ import print_function
 from future import standard_library
@@ -34,9 +35,10 @@ def webhook():
 #config = json.loads(open('https://github.com/giacomo1989/prova-import/blob/master/pizzaimport.json').read())
 
 
-
-    response = urllib.urlopen('https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json')
-    data = json.load(response) 
+    u = urlopen('http://search.twitter.com/search.json?q=python&rpp=5')
+    resp = json.loads(u.read().decode('utf-8'))
+    #response = urllib.urlopen('https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json')
+    #data = json.load(response) 
     
     # with open('pizzaimport.json') as data_file:    
     # data = json.load(data_file)
