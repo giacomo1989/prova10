@@ -7,7 +7,7 @@ standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
 import json
 import os
-import urllib
+#import urllib
 
 from flask import Flask
 from flask import request
@@ -34,7 +34,7 @@ def webhook():
     
 
 url = "https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json"
-response = urllib.urlopen(url)
+response = urllib.request.urlopen(url)
 #data = json.load(response.read())
 #ok = data.get('price')
 #print data
