@@ -7,7 +7,7 @@ standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
 import json
 import os
-import urllib2
+import urllib
 
 from flask import Flask
 from flask import request
@@ -51,6 +51,7 @@ def webhook():
 url = "https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json"
 response = urllib.urlopen(url)
 data = json.loads(response.read())
+print data
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
@@ -63,7 +64,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro " +data  #config["price"] #pro #+ data.get["pizza"]["name"]
+		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro " #+data  #config["price"] #pro #+ data.get["pizza"]["name"]
 		res = makeWebhookResult(speech)
 		return res
 	
