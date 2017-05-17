@@ -46,14 +46,14 @@ def webhook():
     #with open('http://search.twitter.com/search.json?q=python&rpp=5', 'r') as f:
     #data = json.load(f)
     data = urllib2.urlopen(https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json) # it's a file like object and works just like a file
-    #for line in data: # files are iterable
+    for line in data: # files are iterable
    # print line
 
 
 def processRequest(req):
 	if req.get("result").get("action") == "Cost":
 		result = req.get("result")
-		pro = data.get("price")
+		#pro = data.get("price")
 		parameters = result.get("parameters")
 		zone = parameters.get("pizza")
 		cost = {'margherita':3.50, 
@@ -61,7 +61,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+pro  #config["price"] #pro #+ data.get["pizza"]["name"]
+		speech = "la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+line  #config["price"] #pro #+ data.get["pizza"]["name"]
 		res = makeWebhookResult(speech)
 		return res
 	
