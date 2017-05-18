@@ -33,7 +33,8 @@ def webhook():
     return r
     
 
-url = "https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json"
+#url = "https://raw.githubusercontent.com/giacomo1989/prova-import/master/pizzaimport.json"
+url = "https://raw.githubusercontent.com/giacomo1989/array-import/master/array.json"
 response = urllib.request.urlopen(url)
 content = response.read()
 data = json.loads(content.decode("utf8"))
@@ -43,15 +44,17 @@ def processRequest(req):
 		result = req.get("result")
 		parameters = result.get("parameters")
 		zone = parameters.get("pizza")
-		aa = data.get("precio")
-		bb = aa.get("margherita")
-		bbc = aa.get(zone)
+		#aa = data.get("precio")
+		#bb = aa.get("margherita")
+		#bbc = aa.get(zone)
+		aa = data.["menu"][0]["tipo"]
+		
 		cost = {'margherita':3.50, 
 			'diavola':5.50, 
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "ok 9.44,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+bbc #+data.get("price") 
+		speech = "ok 9.44,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+aa #+data.get("price") 
 		res = makeWebhookResult(speech)
 		return res
 	
