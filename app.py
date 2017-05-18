@@ -47,14 +47,14 @@ def processRequest(req):
 		
 		
 		aa = data.get("menu")
-		bb = data.["menu"][0]["tipo"]
+		bb = data["menu"][0]["tipo"]
 		
 		cost = {'margherita':3.50, 
 			'diavola':5.50, 
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "ok 13:19,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+str(data["menu"][0]["tipo"])#+aa #+data.get("price") 
+		speech = "ok 13:21,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+str(data["menu"][0]["tipo"])#+aa #+data.get("price") 
 		res = makeWebhookResult(speech)
 		return res
 	
