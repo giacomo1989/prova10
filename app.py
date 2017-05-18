@@ -45,7 +45,9 @@ def processRequest(req):
 		parameters = result.get("parameters")
 		zone = parameters.get("pizza")
 		
-		
+		# in questo modo sto gestendo un file json che presenta un array, e per gestire il dato dell'array devo utilizzare la struttura
+		# che ho scritto on bb, che compila e funziona, il numero indica quale valore prendere nell array, e successivamente indico che
+		# che cosa voglio prendere, se il campo tipo o il campo prezzo
 		aa = data.get("menu")
 		bb = data["menu"][0]["tipo"]
 		
@@ -54,7 +56,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "ok 13:23,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+bb #str(data["menu"][0]["tipo"])#+aa #+data.get("price") 
+		speech = "ok 13:31,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+bb #str(data["menu"][0]["tipo"])#+aa #+data.get("price") 
 		res = makeWebhookResult(speech)
 		return res
 	
