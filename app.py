@@ -16,6 +16,26 @@ from flask import make_response
 # Flask app should start in global layout
 app = Flask(__name__)
 
+'''
+
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+import urllib.request, urllib.parse, urllib.error
+from urllib.request import urlopen
+import json
+import os
+
+
+
+from flask import Flask
+from flask import request
+
+#from fbmq import Page
+
+from flask import make_response
+
+'''
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -56,7 +76,7 @@ def processRequest(req):
 			'prosciutto and funghi':6.00, 
 			'tonno and cipolla':6.90, 
 			'capricciosa':5.50}
-		speech = "ok 13:31,la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+bb #str(data["menu"][0]["tipo"])#+aa #+data.get("price") 
+		speech = "16,16 la pizza " +zone+ " costa "+str(cost[zone])+ " euro "+" questa prova che ho una "+bb #str(data["menu"][0]["tipo"])#+aa #+data.get("price") 
 		res = makeWebhookResult(speech)
 		return res
 	
